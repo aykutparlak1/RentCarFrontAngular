@@ -1,22 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="cl-md-2">
+    <div class="col-md-2">
       <app-brand></app-brand>
     </div>
-    <div class="cl-md-2">
+    <div class="col-md-2">
       <app-color></app-color>
     </div>
-    <div class="cl-md-5">
-      <app-car></app-car>
-    </div>
-  </div>
-  <div class="row">
-    <div class="cl-md-5">
-      <app-rental></app-rental>
-    </div>
-    <div class="cl-md-7">
-      <app-customer></app-customer>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-<router-outlet></router-outlet>

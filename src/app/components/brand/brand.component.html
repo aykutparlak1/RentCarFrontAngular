@@ -1,10 +1,7 @@
-<table class="table">
-    <thead  >
-        <th>CarID</th>
-        <th>BranId</th>
-    </thead>
-    <tr *ngFor="let brand of brands">
-        <td>{{brand.brandId}}</td>
-        <td>{{brand.brandName}}</td>
-    </tr>
-</table>
+<ul class="list-group">
+    <li (click)="setCurrentBrandNull()" [class]="setAllBrandButton()" routerLink="">Tüm Renkler</li>
+    <li (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brandId/{{brand.brandId}}"
+    *ngFor="let brand of brands"
+    [class]="setCurrentBrandButton(brand)">{{brand.brandName}}</li>
+</ul>
