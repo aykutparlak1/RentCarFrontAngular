@@ -6,17 +6,6 @@ const routes: Routes = [
   {
     path:"",pathMatch:"full",component:CarComponent
   },
-  {
-    path:"cars", component:CarComponent
-  },
-  {
-    path:"cars/colorId/:colorId",component:CarComponent
-  },
-  {
-    path:"cars/brandId/:brandId",component:CarComponent
-  },{
-    path:"cars/brandId/:brandId/colorId/:colorId",component:CarComponent
-  }
 ];
 
 @NgModule({

@@ -1,7 +1,11 @@
-<ul class="list-group">
+<!-- <ul class="list-group">
     <li (click)="setCurrentBrandNull()" [class]="setAllBrandButton()" routerLink="">Tüm Renkler</li>
     <li (click)="setCurrentBrand(brand)"
     routerLink="/cars/brandId/{{brand.brandId}}"
     *ngFor="let brand of brands"
     [class]="setCurrentBrandButton(brand)">{{brand.brandName}}</li>
-</ul>
+</ul> -->
+<select class="form-select" aria-label="Default select example">
+    <option selected  [value]="">Select Brand</option>
+    <option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</option>>
+  </select>

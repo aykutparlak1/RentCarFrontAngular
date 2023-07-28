@@ -19,24 +19,34 @@
     </tr>
 </table> -->
 
-<br>
+<div class="mb-3">
+    <!--<label for="filterText" class="form-label">Search</label>-->
+     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Araba Arayınız">
+   </div>
+   <div  *ngIf="filterText" class="alert alert-success">
+     {{filterText}} aradınız
+   </div>
 <table class="table">
     <thead>
-        <th>CarID</th>
-        <th>BrandName</th>
-        <th>ColorName</th>
-        <th>CarName</th>
-        <th>ModelYear</th>
-        <th>dailyPrice</th>
-        <th>description</th>
+        <tr>
+            <th >BrandName</th>
+            <th >ColorName</th>
+            <th >CarName</th>
+            <th >ModelYear</th>
+            <th >dailyPrice</th>
+            <th >description</th>
+            <th ></th>
+        </tr>
     </thead>
-    <tr *ngFor="let car of carDetails">
-        <td>{{car.carId}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.carName}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-    </tr>
+    <tbody>
+        <tr *ngFor="let car of carDetails | filterPipe:filterText">
+            <td >{{car.brandName}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.carName}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}}</td>
+            <td>{{car.description}}</td>
+            <td><button (click)="getCarDetails(car)" class="btn btn-success">Detay</button></td>
+        </tr>
+    </tbody>
 </table>
