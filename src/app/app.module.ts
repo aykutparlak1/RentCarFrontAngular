@@ -10,7 +10,8 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import {FormsModule} from '@angular/forms';
-import { FilterPipePipe } from './pipes/filter-pipe.pipe'
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { ColorBrandFilterComponent } from './components/color-brand-filter/color-brand-filter.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe'
     CustomerComponent,
     CarComponent,
     RentalComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    ColorBrandFilterComponent
   ],
   imports: [
     BrowserModule,

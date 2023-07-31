@@ -3,9 +3,12 @@
     <li (click)="setCurrentBrand(brand)"
     routerLink="/cars/brandId/{{brand.brandId}}"
     *ngFor="let brand of brands"
-    [class]="setCurrentBrandButton(brand)">{{brand.brandName}}</li>
+    [class]="sengModelChangetCurrentBrandButton(brand)">{{brand.brandName}}</li>
 </ul> -->
-<select class="form-select" aria-label="Default select example">
-    <option selected  [value]="">Select Brand</option>
-    <option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</option>>
+<select (keyup)="handleKeyup($event)" (change)="selectBrand($event)" class="form-select" aria-label="Default select example">
+    <option selected value="" value="brandId"  [value]="'NotSelected'">Select Brand</option>
+    <option *ngFor="let brand of brands" value="brandId" [value]="brand.brandId">{{brand.brandName}}</option>>
   </select>
+  <input type="text" [value]="brandId" (keyup)="handleKeyup($event)" />
+<div>{{brandId}}</div>
+x

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -11,6 +11,7 @@ export class BrandComponent implements OnInit {
   constructor(private brandService:BrandService) {}
   brands:Brand[]=[];
   currentBrand:Brand;
+  brandId:number
   isActive=false;
   ngOnInit(): void { 
     this.getBrands();
@@ -44,5 +45,12 @@ export class BrandComponent implements OnInit {
         return "list-group-item"
       }
     }
-  
+    handleKeyup(event: any): void{ 
+      this.brandId = event.target.value;
+      console.log(event);
+  }
+    @Output() selectedBrand = new EventEmitter<any>();
+      selectBrand(value: any) {
+      this.selectedBrand.emit(value);
+    }
 }
